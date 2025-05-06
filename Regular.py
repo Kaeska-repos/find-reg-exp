@@ -72,8 +72,6 @@ class MainWindow(wx.Frame):
         # A section for describing event bindings.
         result_btn.Bind(wx.EVT_BUTTON, self.OnButton)
 
-        self.Show()
-
 
     # A section for describing function.
     def OnButton(self, event):
@@ -109,7 +107,8 @@ class MainWindow(wx.Frame):
         result = '\n'.join(result)
         self.result_ctrl.SetValue(result)
 
-
-app = wx.App()
-MainFrame = MainWindow()
-app.MainLoop()
+if __name__ == '__main__':
+    app = wx.App()
+    MainFrame = MainWindow()
+    MainFrame.Show()
+    app.MainLoop()
